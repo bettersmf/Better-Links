@@ -1,3 +1,11 @@
+## 1.0.4
+
+- Corrected legacy upgrade bookkeeping so all supported direct upgrades record the installed Better Links version as 1.0.4.
+- Added a direct upgrade path from Better Links 1.0.3.
+- Normalized release metadata and documentation versioning.
+- Completed a stable-release audit of package integrity, PHP syntax, language coverage, lifecycle behavior, admin session protection, output escaping, and remote-fetch security controls.
+- No database schema changes.
+
 # Better Links Changelog
 
 ## 1.0.3
@@ -8,8 +16,6 @@ Current stable release.
 - URLs inside `[img]...[/img]` and parameterized image tags such as `[img width=260]...[/img]` are excluded from automatic link previews.
 - Prevents inline images from rendering as broken images while their source URL is moved into a Better Links preview card.
 - Added direct upgrade support from Better Links 1.0.2.
-- Corrected legacy upgrade bookkeeping so direct upgrades to 1.0.3 record the installed Better Links version as 1.0.3.
-- Completed stable-release package, language-key, lifecycle, and security audit.
 
 ## 1.0.2
 
