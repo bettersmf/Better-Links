@@ -8,6 +8,8 @@ Current stable release.
 - URLs inside `[img]...[/img]` and parameterized image tags such as `[img width=260]...[/img]` are excluded from automatic link previews.
 - Prevents inline images from rendering as broken images while their source URL is moved into a Better Links preview card.
 - Added direct upgrade support from Better Links 1.0.2.
+- Corrected legacy upgrade bookkeeping so direct upgrades to 1.0.3 record the installed Better Links version as 1.0.3.
+- Completed stable-release package, language-key, lifecycle, and security audit.
 
 ## 1.0.2
 
