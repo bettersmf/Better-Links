@@ -1,0 +1,445 @@
+/*
+ * Better Links 0.1.0-dev6
+ * Link previews only.
+ */
+
+/* Rich link preview cards */
+.betterposts-link-card {
+	display: flex;
+	width: min(100%, 720px);
+	min-height: 112px;
+	margin: 10px 0;
+	overflow: hidden;
+	border: 1px solid rgba(127, 127, 127, .28);
+	border-radius: 10px;
+	background: rgba(127, 127, 127, .055);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+	color: inherit !important;
+	text-decoration: none !important;
+	transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.betterposts-link-card:hover,
+.betterposts-link-card:focus {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, .16);
+	border-color: rgba(127, 127, 127, .45);
+	text-decoration: none !important;
+}
+
+.betterposts-link-card-image {
+	flex: 0 0 180px;
+	min-height: 112px;
+	background: rgba(127, 127, 127, .08);
+}
+
+.betterposts-link-card-image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 112px;
+	max-height: 150px;
+	object-fit: cover;
+}
+
+.betterposts-link-card-body {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	flex-direction: column;
+	justify-content: center;
+	padding: 12px 15px;
+}
+
+.betterposts-link-card-site,
+.betterposts-link-card-domain {
+	display: block;
+	overflow: hidden;
+	color: inherit;
+	font-size: .82em;
+	opacity: .7;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.betterposts-link-card-title {
+	display: -webkit-box;
+	margin: 3px 0;
+	overflow: hidden;
+	font-size: 1.05em;
+	font-weight: 700;
+	line-height: 1.3;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.betterposts-link-card-description {
+	display: -webkit-box;
+	margin: 2px 0 5px;
+	overflow: hidden;
+	font-size: .92em;
+	line-height: 1.35;
+	opacity: .84;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+@media (max-width: 600px) {
+	.betterposts-link-card {
+		flex-direction: column;
+	}
+
+	.betterposts-link-card-image {
+		flex-basis: auto;
+		width: 100%;
+		height: 150px;
+		min-height: 0;
+	}
+
+	.betterposts-link-card-image img {
+		height: 150px;
+		min-height: 0;
+		max-height: 150px;
+	}
+}
+
+
+/* dev3 link preview output */
+.betterposts-link-card-no-image {
+	min-height: 0;
+}
+
+.betterposts-link-card-no-image .betterposts-link-card-body {
+	padding: 15px 17px;
+}
+
+.betterposts-link-card-site {
+	margin-bottom: 2px;
+	font-weight: 600;
+	letter-spacing: .01em;
+}
+
+.betterposts-link-card-title {
+	margin: 1px 0 4px;
+}
+
+.betterposts-link-card-footer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 4px;
+	min-width: 0;
+}
+
+.betterposts-link-card-domain {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.betterposts-link-card-arrow {
+	flex: 0 0 auto;
+	font-size: 1em;
+	line-height: 1;
+	opacity: .55;
+	transform: translateY(-1px);
+}
+
+.betterposts-link-card:hover .betterposts-link-card-arrow,
+.betterposts-link-card:focus .betterposts-link-card-arrow {
+	opacity: .85;
+}
+
+
+/* dev5a admin-page polish */
+.betterposts-admin-cell {
+	box-sizing: border-box;
+	margin: 0 0 10px;
+	padding: 12px 14px;
+	border: 1px solid rgba(127, 127, 127, .28);
+	border-top: 0;
+	border-radius: 0 0 7px 7px;
+	background: rgba(255, 255, 255, .68);
+}
+
+.betterposts-admin-cell .information {
+	margin: 10px 0 0;
+}
+
+.betterposts-admin-actions {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	clear: both;
+	margin-top: 14px;
+	padding-top: 10px;
+	border-top: 1px solid rgba(127, 127, 127, .18);
+}
+
+.betterposts-admin-actions .button {
+	float: none !important;
+	margin: 0 !important;
+}
+
+
+/* dev5b: make selected admin headers and their body cells one continuous panel */
+.betterposts-admin-joined-title {
+	margin-bottom: 0 !important;
+}
+
+.betterposts-admin-joined-title + .betterposts-admin-cell {
+	margin-top: 0 !important;
+}
+
+.betterposts-admin-joined-title .titlebg {
+	margin-bottom: 0 !important;
+	border-radius: 7px 7px 0 0 !important;
+}
+
+.betterposts-admin-cell {
+	border-radius: 0 0 7px 7px !important;
+}
+
+
+/* dev5c: final authority for Better Links joined admin sections */
+.windowbg .betterposts-admin-joined-title,
+.windowbg > .betterposts-admin-joined-title {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	border-bottom: 0 !important;
+	border-radius: 7px 7px 0 0 !important;
+}
+
+.windowbg .betterposts-admin-joined-title > .titlebg,
+.windowbg > .betterposts-admin-joined-title > .titlebg {
+	margin: 0 !important;
+	border-radius: 7px 7px 0 0 !important;
+}
+
+.windowbg .betterposts-admin-joined-title + .betterposts-admin-cell,
+.windowbg > .betterposts-admin-joined-title + .betterposts-admin-cell {
+	margin-top: 0 !important;
+	border-top: 0 !important;
+	border-radius: 0 0 7px 7px !important;
+}
+
+
+/* dev6: preview placement — links stay in the message, cards collect below it */
+.betterposts-preview-marker {
+	display: none !important;
+}
+
+.betterposts-link-previews {
+	clear: both;
+	margin-top: 14px;
+	padding-top: 2px;
+}
+
+.betterposts-link-previews .betterposts-link-card:first-child {
+	margin-top: 0;
+}
+
+.betterposts-link-previews .betterposts-link-card:last-child {
+	margin-bottom: 0;
+}
+
+
+/* dev7: Admin Preview / Cache Manager */
+.betterposts-manager-title {
+	margin-top: 18px;
+}
+
+.betterposts-manager-shell {
+	padding: 0 0 4px;
+}
+
+.betterposts-manager-filter {
+	display: flex;
+	align-items: end;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin: 10px 0 12px;
+}
+
+.betterposts-manager-filter label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.betterposts-manager-search {
+	flex: 1 1 320px;
+}
+
+.betterposts-manager-search input {
+	width: 100%;
+	min-width: 220px;
+}
+
+.betterposts-manager-summary {
+	margin: 8px 0 10px;
+	font-size: .9em;
+	opacity: .78;
+}
+
+.betterposts-preview-manager-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.betterposts-preview-admin-row {
+	display: grid;
+	grid-template-columns: 72px minmax(0, 1fr) auto;
+	gap: 12px;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid rgba(127, 127, 127, .25);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, .56);
+}
+
+.betterposts-preview-admin-thumb {
+	width: 72px;
+	height: 72px;
+	border-radius: 7px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(127, 127, 127, .08);
+	font-size: 28px;
+}
+
+.betterposts-preview-admin-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.betterposts-preview-admin-main {
+	min-width: 0;
+}
+
+.betterposts-preview-admin-heading {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.betterposts-preview-admin-domain {
+	margin-top: 2px;
+	opacity: .75;
+}
+
+.betterposts-preview-admin-url {
+	margin-top: 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.betterposts-preview-admin-dates {
+	margin-top: 6px;
+	opacity: .78;
+}
+
+.betterposts-preview-admin-error {
+	margin-top: 5px;
+	color: #a33;
+}
+
+.betterposts-preview-status {
+	display: inline-block;
+	padding: 2px 7px;
+	border-radius: 999px;
+	font-size: .78em;
+	font-weight: 700;
+	line-height: 1.45;
+}
+
+.betterposts-preview-status-ready {
+	background: rgba(45, 145, 75, .13);
+}
+
+.betterposts-preview-status-expired {
+	background: rgba(190, 125, 20, .14);
+}
+
+.betterposts-preview-status-failed {
+	background: rgba(180, 50, 50, .14);
+}
+
+.betterposts-preview-admin-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	min-width: 92px;
+}
+
+.betterposts-preview-admin-actions form,
+.betterposts-preview-admin-actions .button {
+	width: 100%;
+	margin: 0;
+}
+
+.betterposts-manager-pagination {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+.betterposts-manager-inspect-title {
+	margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+	.betterposts-preview-admin-row {
+		grid-template-columns: 56px minmax(0, 1fr);
+	}
+
+	.betterposts-preview-admin-thumb {
+		width: 56px;
+		height: 56px;
+	}
+
+	.betterposts-preview-admin-actions {
+		grid-column: 1 / -1;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.betterposts-preview-admin-actions form {
+		width: auto;
+		flex: 1 1 110px;
+	}
+}
+
+
+/* dev8: release-hardening maintenance controls */
+.betterposts-maintenance-actions {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin: 10px 0 8px;
+}
+
+.betterposts-maintenance-actions form {
+	margin: 0;
+}
+
+.betterposts-orphan-report {
+	margin: 8px 0 12px;
+	padding: 10px 12px;
+	border: 1px solid rgba(127, 127, 127, .22);
+	border-radius: 7px;
+	background: rgba(127, 127, 127, .06);
+}
+
+
+/* dev8d preserved-preview recovery note */
+.betterposts-recovery-note {
+	margin-top: 2px;
+	opacity: .78;
+}

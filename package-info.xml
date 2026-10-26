@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "https://www.simplemachines.org/xml/package-info">
+<package-info xmlns="https://www.simplemachines.org/xml/package-info" xmlns:smf="https://www.simplemachines.org/">
+    <id>bettersmf:better-posts</id>
+    <name>Better Links</name>
+    <version>1.0.4</version>
+    <type>modification</type>
+
+    <install for="2.1 - 2.1.99">
+        <require-file name="Sources/BetterPosts.php" destination="$sourcedir" />
+        <require-file name="better_posts_dev2_db.php" destination="$boarddir" />
+        <require-file name="Themes/default/css/better_posts.css" destination="$themedir/css" />
+        <require-file name="Themes/default/languages/BetterPosts.english.php" destination="$languagedir" />
+        <require-file name="Themes/default/BetterPostsAdmin.template.php" destination="$themedir" />
+        <require-file name="Themes/default/images/bbc/betterposts_nopreview.png" destination="$themedir/images/bbc" />
+        <code>better_posts_install.php</code>
+    </install>
+
+    <upgrade for="2.1 - 2.1.99" from="0.1.0-dev1,0.1.0-dev1a,0.1.0-dev2,0.1.0-dev2a,0.1.0-dev2b,0.1.0-dev2c,0.1.0-dev3,0.1.0-dev4,0.1.0-dev5,0.1.0-dev5a,0.1.0-dev5b,0.1.0-dev5c,0.1.0-dev6,0.1.0-dev6a,0.1.0-dev7,0.1.0-dev8,0.1.0-dev8a,0.1.0-dev8b,0.1.0-dev8c,0.1.0-dev8d,1.0.0-RC1,1.0.0-RC2,1.0.0-RC3,1.0.0-RC4,1.0.0,1.0.1,1.0.2,1.0.3">
+        <require-file name="Sources/BetterPosts.php" destination="$sourcedir" />
+        <require-file name="better_posts_dev2_db.php" destination="$boarddir" />
+        <require-file name="Themes/default/css/better_posts.css" destination="$themedir/css" />
+        <require-file name="Themes/default/languages/BetterPosts.english.php" destination="$languagedir" />
+        <require-file name="Themes/default/BetterPostsAdmin.template.php" destination="$themedir" />
+        <require-file name="Themes/default/images/bbc/betterposts_nopreview.png" destination="$themedir/images/bbc" />
+        <code>better_posts_upgrade_1_0_4.php</code>
+    </upgrade>
+
+    <uninstall for="2.1 - 2.1.99">
+        <!-- Always run: detach hooks and preserve data by default. -->
+        <code>better_posts_uninstall.php</code>
+
+        <!--
+            OPTIONAL / DESTRUCTIVE.
+            SMF exposes its native uninstall checkbox whenever an uninstall
+            <database> action exists, and only executes this file when that
+            checkbox (do_db_changes) is selected.
+        -->
+        <database>better_posts_uninstall_data.php</database>
+
+        <remove-file name="$sourcedir/BetterPosts.php" />
+        <remove-file name="$boarddir/better_posts_dev2_db.php" />
+        <remove-file name="$themedir/css/better_posts.css" />
+        <remove-file name="$languagedir/BetterPosts.english.php" />
+        <remove-file name="$themedir/BetterPostsAdmin.template.php" />
+        <remove-file name="$themedir/images/bbc/betterposts_nopreview.png" />
+    </uninstall>
+</package-info>
